@@ -51,7 +51,6 @@ while true do
       TEXT
       # エンターの入力で処理を再開
       gets.chomp
-      # a.empty?
     end
     break if thing.empty?
 end
