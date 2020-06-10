@@ -1,8 +1,8 @@
 #空の配列を作成
-@things = []
+things = []
 
  #メソッド定義
- def input_activity
+ def input_activity(things)
     #活動内容の入力処理
     while true do
       sleep 0.2
@@ -21,7 +21,7 @@
         #入力が、「私」で始まる場合は配列に格納
       elsif thing.start_with?("私")
 
-        @things << thing
+        things << thing
 
         #文頭が「私」でない場合、注意喚起
         # else ! thing.start_with?("私")
@@ -40,10 +40,10 @@
   end
 
   #活動内容の出力メソッド
-  def output_activity_list
+  def output_activity_list(things)
 
   #配列の要素の数をカウント
-  num = @things.count
+  num = things.count
     #最終的な一覧表示
     sleep 0.5
     puts <<~TEXT
@@ -54,7 +54,7 @@
     ===========================
 
     TEXT
-    puts @things
+    puts things
     puts <<~TEXT
 
     本日、あなたは#{num}個のことを行いました！
@@ -64,5 +64,8 @@
     TEXT
   end
 
-input_activity
-output_activity_list
+input_activity things
+output_activity_list things
+
+# アイデア　配列を、式展開させる
+# 前向きな、未来志向の感想を書き加える。ばしょをもつ。
